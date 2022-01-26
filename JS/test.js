@@ -1,17 +1,9 @@
-const nameInput = document.getElementById("name-input");
-const ageInput = document.getElementById("age-input");
 const submitBtn = document.getElementById("submit-btn");
-const nameOutput = document.getElementById("name-output");
-const ageOutput = document.getElementById("age-output");
+const mainSection = document.getElementById("main-section");
 
-submitBtn.addEventListener("click", function(e) {
-    e.preventDefault()
-    const newNameInput = nameInput.value
-    nameOutput.innerHTML = newNameInput
-    console.log(typeof(newNameInput))
+submitBtn.addEventListener("click", function() {
 
-    const newAgeInput = parseInt(ageInput.value)
-    ageOutput.innerHTML = newAgeInput + 5
-    console.log(typeof(newAgeInput))
+    const newDiv = document.createElement("div");
+    
+
 })
-
