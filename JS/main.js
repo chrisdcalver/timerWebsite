@@ -1,5 +1,5 @@
 // Import other functions
-import {countdownTimer} from './timerFunction.js'
+//import {countdownTimer} from '../JS/timerFunction'
 
 // Grab elements from the DOM
 const chairInput = document.getElementById("chair-input");
@@ -27,13 +27,13 @@ submitBtn.addEventListener("click", function(e) {
         chairNum += 1;
 
         const chairDiv = document.createElement("div");
-        chairDiv.classList.add("chairArea");
-        mainDisplay.appendChild(chairDiv);
+        chairDiv.id = "chair-area";
         chairDiv.innerHTML += `
             <h2 id="chairBanner">Chair: </h2>
-            <h4>Time Left: <span id="timer-display">15:00</span></h3>
+            <h4>Time Left: <span id="timer-display">15:00</span></h4>
             <button id="startBtn">Start Timer</button>
             <button id="resetBtn">Reset Timer</button>
         `;
+        mainDisplay.appendChild("chairDiv")
     };
 });
