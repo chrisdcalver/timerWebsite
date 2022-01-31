@@ -16,9 +16,7 @@ function renderDisplay() {
 
         // Assign values of input to new variables and turn to interger
         const newChairInput = parseInt(chairInput.value);
-        return newChairInput;
         const newMinuteInput = parseInt(minuteInput.value);
-        return newMinuteInput;
 
         // Create HTML div for chair display depending on user input
         for (let i = 0; i < newChairInput; i++) {
