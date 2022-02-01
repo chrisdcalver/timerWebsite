@@ -33,10 +33,52 @@ function renderDisplay() {
                 <button id="resetBtn">Reset Timer</button>
         `;
             mainDisplay.appendChild(chairDiv);
+
         }; // for loop
 
     }); // submitBtn click
 
 } // renderDisplay()
+
+function countdownTimer() {
+
+    const startMinutes = parseInt(minuteInput.value)
+    let time = startMinutes * 60
+    let startTimer
+
+    const timerEl = document.getElementById("timer-display")
+    const startBtn = document.getElementById("startBtn")
+    const resetBtn = document.getElementById("resetBtn")
+
+    function updateCountdown() {
+
+        const minutes = Math.floor(time / 60)
+        let seconds = time % 60 // Whatever is left after divided into 60
+
+        seconds = seconds < 10 ? '0' + seconds : seconds
+
+        timerEl.innerHTML = `${minutes}:${seconds}`
+        time-- // reduced time by 1 every 1 sec (as set in the setInterval method)
+
+        // If timer gets to zero to reset rather than keep going
+        if (minutes < 0) {
+            resetTimer()
+        }
+    }
+
+    function startBtnFn() {
+        startTimer = setInterval(updateCountdown, 1000)
+    }
+
+    startBtnFn()
+
+    // Own function for now however if not reused then refactor into resetBtn code below
+    function resetTimer() {
+        clearInterval(startTimer)
+        timerEl.innerHTML = startMinutes + ":00"
+    }
+
+    // resetBtn.addEventListener('click', resetTimer)
+}
 
 renderDisplay()

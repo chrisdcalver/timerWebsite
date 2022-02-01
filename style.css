@@ -26,6 +26,8 @@ header {
 
 form {
     text-align: left;
+    display: flex;
+    align-items: center;
 }
 
 label {
