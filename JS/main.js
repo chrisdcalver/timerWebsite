@@ -8,6 +8,7 @@ const mainDisplay = document.getElementById("mainDisplay")
 let chairNum = 0
 
 function renderDisplay() {
+
     // Button Pressed 
     submitBtn.addEventListener("click", function (e) {
 
@@ -26,14 +27,16 @@ function renderDisplay() {
             const chairDiv = document.createElement("div");
             chairDiv.classList.add("chairArea")
             chairDiv.innerHTML += `
-            <h2 id="chairBanner">Chair: ${chairNum}</h2>
-            <h4>Time Left: <span id="timer-display">${newMinuteInput}:00</span></h4>
-            <button id="startBtn">Start Timer</button>
-            <button id="resetBtn">Reset Timer</button>
+                <h2 id="chairBanner">Chair: ${chairNum}</h2>
+                <h4>Time Left: <span id="timer-display">${newMinuteInput}:00</span></h4>
+                <button id="startBtn">Start Timer</button>
+                <button id="resetBtn">Reset Timer</button>
         `;
             mainDisplay.appendChild(chairDiv);
-        };
-    });
-}
+        }; // for loop
+
+    }); // submitBtn click
+
+} // renderDisplay()
 
 renderDisplay()
