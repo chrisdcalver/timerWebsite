@@ -6,6 +6,10 @@ const mainDisplay = document.getElementById("mainDisplay")
 
 // Global variables
 let chairNum = 0
+let chairArr = []
+// let timerFunctions = countdownTimer()
+// let startTimer = timerFunctions[0]
+// let resetTimer = timerFunctions[1]
 
 function renderDisplay() {
 
@@ -33,7 +37,6 @@ function renderDisplay() {
                 <button id="resetBtn">Reset Timer</button>
         `;
             mainDisplay.appendChild(chairDiv);
-
         }; // for loop
 
     }); // submitBtn click
@@ -70,15 +73,17 @@ function countdownTimer() {
         startTimer = setInterval(updateCountdown, 1000)
     }
 
-    startBtnFn()
-
     // Own function for now however if not reused then refactor into resetBtn code below
-    function resetTimer() {
+    function resetBtnFn() {
         clearInterval(startTimer)
         timerEl.innerHTML = startMinutes + ":00"
     }
+
+    return [startBtnFn, resetBtnFn]
 
     // resetBtn.addEventListener('click', resetTimer)
 }
 
 renderDisplay()
+
+countdownTimer()
